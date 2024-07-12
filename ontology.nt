@@ -1,0 +1,429 @@
+<http://purl.org/net/sett#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://purl.org/net/sett#> <http://www.w3.org/2002/07/owl#versionIRI> <http://purl.org/net/sett/1.0> .
+<http://purl.org/net/sett#> <http://purl.org/dc/elements/1.1/abstract> "The negative impact of human activities on our planet has increased the interest of stakeholders — from policymakers to citizens — in monitoring and understanding local environmental changes. However, despite being openly available, remotely-sensed Earth observation Time Series (EO-TS) are complex and difficult for non-experts to interpret. We introduce the EO-evo (Earth Observation Evolution) ontology to to describe the Environmental semantic trajectories of EO data for both expert and non-expert users."@en .
+<http://purl.org/net/sett#> <http://purl.org/dc/elements/1.1/description> "EO-evo is a multi-layer ontology designed to describe the semantic trajectories of Earth Observation (EO) data within the Environmental domain. The ontology embeds three types of trajectories: raw, structured, and semantic. These trajectories provide a comprehensive framework for capturing, organizing, and analyzing the spatio-temporal evolution of Earth’s dynamics."@en .
+<http://purl.org/net/sett#> <http://purl.org/dc/elements/1.1/title> "The EO-evo ontology"@en .
+<http://purl.org/net/sett#> <http://purl.org/dc/terms/created> "July 12th, 2024"@en .
+<http://purl.org/net/sett#> <http://purl.org/dc/terms/creator> "(1) Daniela Fernanda Milon-Flores"@en .
+<http://purl.org/net/sett#> <http://purl.org/dc/terms/creator> "(2) Camille Bernard"@en .
+<http://purl.org/net/sett#> <http://purl.org/dc/terms/creator> "(3) Jérôme Gensel"@en .
+<http://purl.org/net/sett#> <http://purl.org/dc/terms/creator> "(4) Gregory Giuliani"@en .
+<http://purl.org/net/sett#> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> .
+<http://purl.org/net/sett#> <http://schema.org/citation> "Cite this vocabulary as: Milon-Flores, D. ; Bernard, C. ; Gensel, J. and Giuliani, G. The EO-evo ontology 1.0"@en .
+<http://purl.org/net/sett#> <http://www.w3.org/2002/07/owl#versionInfo> "1.0"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/abstract
+<http://purl.org/dc/elements/1.1/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://schema.org/citation
+<http://schema.org/citation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/net/sett#EpisodeIsAnnotatedFrom
+<http://purl.org/net/sett#EpisodeIsAnnotatedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#EpisodeIsAnnotatedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Episode> .
+<http://purl.org/net/sett#EpisodeIsAnnotatedFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#Trend> .
+<http://purl.org/net/sett#EpisodeIsAnnotatedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "An Episode is annotated from a Trend."@en .
+<http://purl.org/net/sett#EpisodeIsAnnotatedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "Episode is Annotated from"@en .
+<http://purl.org/net/sett#EpisodeIsAnnotatedFrom> <http://www.w3.org/2004/02/skos/core#prefLabel> "EpisodeIsAnnotatedFrom"@en .
+# 
+# http://purl.org/net/sett#EventIsAnnotatedFrom
+<http://purl.org/net/sett#EventIsAnnotatedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#EventIsAnnotatedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Event> .
+<http://purl.org/net/sett#EventIsAnnotatedFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#Break> .
+<http://purl.org/net/sett#EventIsAnnotatedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "An Event is Annotated From a Break."@en .
+<http://purl.org/net/sett#EventIsAnnotatedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "Event is Annotated From"@en .
+<http://purl.org/net/sett#EventIsAnnotatedFrom> <http://www.w3.org/2004/02/skos/core#prefLabel> "EventIsAnnotatedFrom"@en .
+# 
+# http://purl.org/net/sett#correspondsTo
+<http://purl.org/net/sett#correspondsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#correspondsTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Break> .
+<http://purl.org/net/sett#correspondsTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#Observation> .
+<http://purl.org/net/sett#correspondsTo> <http://www.w3.org/2000/01/rdf-schema#comment> " "@en .
+<http://purl.org/net/sett#correspondsTo> <http://www.w3.org/2000/01/rdf-schema#label> "corresponds To"@en .
+<http://purl.org/net/sett#correspondsTo> <http://www.w3.org/2004/02/skos/core#prefLabel> "correspondsTo"@en .
+# 
+# http://purl.org/net/sett#hasAnnotationEpisodeAbstract
+<http://purl.org/net/sett#hasAnnotationEpisodeAbstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasAnnotationEpisodeAbstract> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Episode> .
+<http://purl.org/net/sett#hasAnnotationEpisodeAbstract> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/net/sett#hasAnnotationEpisodeAbstract> <http://www.w3.org/2000/01/rdf-schema#comment> "The Episode is annotated with semantic descriptions. This annotations corresponds to the Abstract layer."@en .
+<http://purl.org/net/sett#hasAnnotationEpisodeAbstract> <http://www.w3.org/2000/01/rdf-schema#label> "has Annotation Abstract"@en .
+<http://purl.org/net/sett#hasAnnotationEpisodeAbstract> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasAnnotationAbstract"@en .
+# 
+# http://purl.org/net/sett#hasAnnotationEpisodeDomain
+<http://purl.org/net/sett#hasAnnotationEpisodeDomain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasAnnotationEpisodeDomain> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Episode> .
+<http://purl.org/net/sett#hasAnnotationEpisodeDomain> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/net/sett#hasAnnotationEpisodeDomain> <http://www.w3.org/2000/01/rdf-schema#comment> "The Episode is annotated with semantic descriptions. This annotations corresponds to the Environmental domain layer."@en .
+<http://purl.org/net/sett#hasAnnotationEpisodeDomain> <http://www.w3.org/2000/01/rdf-schema#label> "has Annotation Episode Domain"@en .
+<http://purl.org/net/sett#hasAnnotationEpisodeDomain> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasAnnotationEpisodeDomain"@en .
+# 
+# http://purl.org/net/sett#hasAnnotationEvent
+<http://purl.org/net/sett#hasAnnotationEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasAnnotationEvent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Event> .
+<http://purl.org/net/sett#hasAnnotationEvent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/net/sett#hasAnnotationEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "The Event is annotated with semantic descriptions."@en .
+<http://purl.org/net/sett#hasAnnotationEvent> <http://www.w3.org/2000/01/rdf-schema#label> "has Annotation Event"@en .
+<http://purl.org/net/sett#hasAnnotationEvent> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasAnnotationEvent"@en .
+# 
+# http://purl.org/net/sett#hasBreak
+<http://purl.org/net/sett#hasBreak> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasBreak> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#StructuredTrajectory> .
+<http://purl.org/net/sett#hasBreak> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#Break> .
+<http://purl.org/net/sett#hasBreak> <http://www.w3.org/2000/01/rdf-schema#comment> "A Structured trajectory has zero or more Breaks."@en .
+<http://purl.org/net/sett#hasBreak> <http://www.w3.org/2000/01/rdf-schema#label> "has Break"@en .
+<http://purl.org/net/sett#hasBreak> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasBreak"@en .
+# 
+# http://purl.org/net/sett#hasDate
+<http://purl.org/net/sett#hasDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#FittedMeasure> .
+<http://purl.org/net/sett#hasDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#DateTimeDescription> .
+<http://purl.org/net/sett#hasDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes the date of a fitted measurement."@en .
+<http://purl.org/net/sett#hasDate> <http://www.w3.org/2000/01/rdf-schema#label> "has Date"@en .
+<http://purl.org/net/sett#hasDate> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasDate"@en .
+# 
+# http://purl.org/net/sett#hasDateBreak
+<http://purl.org/net/sett#hasDateBreak> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasDateBreak> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Break> .
+<http://purl.org/net/sett#hasDateBreak> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#DateTimeDescription> .
+<http://purl.org/net/sett#hasDateBreak> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes the approximate date of the breakpoint."@en .
+<http://purl.org/net/sett#hasDateBreak> <http://www.w3.org/2000/01/rdf-schema#label> "has Date"@en .
+<http://purl.org/net/sett#hasDateBreak> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasDate"@en .
+# 
+# http://purl.org/net/sett#hasDomain
+<http://purl.org/net/sett#hasDomain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasDomain> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#PointOfView> .
+<http://purl.org/net/sett#hasDomain> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/net/sett#hasDomain> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes the Environmental domain."@en .
+<http://purl.org/net/sett#hasDomain> <http://www.w3.org/2000/01/rdf-schema#label> "has Domain"@en .
+<http://purl.org/net/sett#hasDomain> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasDomain"@en .
+# 
+# http://purl.org/net/sett#hasEpisode
+<http://purl.org/net/sett#hasEpisode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasEpisode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#SemanticTrajectory> .
+<http://purl.org/net/sett#hasEpisode> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#Episode> .
+<http://purl.org/net/sett#hasEpisode> <http://www.w3.org/2000/01/rdf-schema#comment> "A Semantic trajectory has one or more Episodes."@en .
+<http://purl.org/net/sett#hasEpisode> <http://www.w3.org/2000/01/rdf-schema#label> "has Episode"@en .
+<http://purl.org/net/sett#hasEpisode> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasEpisode"@en .
+# 
+# http://purl.org/net/sett#hasEvent
+<http://purl.org/net/sett#hasEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasEvent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#SemanticTrajectory> .
+<http://purl.org/net/sett#hasEvent> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#Event> .
+<http://purl.org/net/sett#hasEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "A Semantic trajectory has zero or more Events."@en .
+<http://purl.org/net/sett#hasEvent> <http://www.w3.org/2000/01/rdf-schema#label> "has Event"@en .
+<http://purl.org/net/sett#hasEvent> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasEvent"@en .
+# 
+# http://purl.org/net/sett#hasFittedBegin
+<http://purl.org/net/sett#hasFittedBegin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasFittedBegin> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Trend> .
+<http://purl.org/net/sett#hasFittedBegin> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#FittedBegin> .
+<http://purl.org/net/sett#hasFittedBegin> <http://www.w3.org/2000/01/rdf-schema#comment> "The trend line starts with its first fitted value."@en .
+<http://purl.org/net/sett#hasFittedBegin> <http://www.w3.org/2000/01/rdf-schema#label> "has Fitted Begin"@en .
+<http://purl.org/net/sett#hasFittedBegin> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasFittedBegin"@en .
+# 
+# http://purl.org/net/sett#hasFittedEnd
+<http://purl.org/net/sett#hasFittedEnd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasFittedEnd> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Trend> .
+<http://purl.org/net/sett#hasFittedEnd> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#FittedEnd> .
+<http://purl.org/net/sett#hasFittedEnd> <http://www.w3.org/2000/01/rdf-schema#comment> "The trend line finishes with its last fitted value."@en .
+<http://purl.org/net/sett#hasFittedEnd> <http://www.w3.org/2000/01/rdf-schema#label> "has Fitted End"@en .
+<http://purl.org/net/sett#hasFittedEnd> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasFittedEnd"@en .
+# 
+# http://purl.org/net/sett#hasMVT
+<http://purl.org/net/sett#hasMVT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasMVT> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#TerritorialUnit> .
+<http://purl.org/net/sett#hasMVT> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#MultipleViewpointTrajectory> .
+<http://purl.org/net/sett#hasMVT> <http://www.w3.org/2000/01/rdf-schema#comment> "A Territorial Unit (TU) has Multiple Viewpoint Trajectory (MVT)."@en .
+<http://purl.org/net/sett#hasMVT> <http://www.w3.org/2000/01/rdf-schema#label> "has Multiple Viewpoint Trajectory (MVT)"@en .
+<http://purl.org/net/sett#hasMVT> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasMVT"@en .
+# 
+# http://purl.org/net/sett#hasObservation
+<http://purl.org/net/sett#hasObservation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasObservation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#RawTrajectory> .
+<http://purl.org/net/sett#hasObservation> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#Observation> .
+<http://purl.org/net/sett#hasObservation> <http://www.w3.org/2000/01/rdf-schema#comment> "A raw trajectory consists of one or more observations that represent its movement."@en .
+<http://purl.org/net/sett#hasObservation> <http://www.w3.org/2000/01/rdf-schema#label> "has Observation"@en .
+<http://purl.org/net/sett#hasObservation> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasObservation"@en .
+# 
+# http://purl.org/net/sett#hasPointOfView
+<http://purl.org/net/sett#hasPointOfView> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasPointOfView> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#SemanticTrajectory> .
+<http://purl.org/net/sett#hasPointOfView> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#PointOfView> .
+<http://purl.org/net/sett#hasPointOfView> <http://www.w3.org/2000/01/rdf-schema#comment> "A Semantic trajectory has a Point Of View."@en .
+<http://purl.org/net/sett#hasPointOfView> <http://www.w3.org/2000/01/rdf-schema#label> "has Point Of View"@en .
+<http://purl.org/net/sett#hasPointOfView> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasPointOfView"@en .
+# 
+# http://purl.org/net/sett#hasSemanticTrajectory
+<http://purl.org/net/sett#hasSemanticTrajectory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasSemanticTrajectory> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#MultipleViewpointTrajectory> .
+<http://purl.org/net/sett#hasSemanticTrajectory> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#SemanticTrajectory> .
+<http://purl.org/net/sett#hasSemanticTrajectory> <http://www.w3.org/2000/01/rdf-schema#comment> "A Multiple Viewpoint Trajectory (MVP) is composed of one Semantic trajectory."@en .
+<http://purl.org/net/sett#hasSemanticTrajectory> <http://www.w3.org/2000/01/rdf-schema#label> "has Semantic Trajectory"@en .
+<http://purl.org/net/sett#hasSemanticTrajectory> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasSemanticTrajectory"@en .
+# 
+# http://purl.org/net/sett#hasTrend
+<http://purl.org/net/sett#hasTrend> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#hasTrend> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#StructuredTrajectory> .
+<http://purl.org/net/sett#hasTrend> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#Trend> .
+<http://purl.org/net/sett#hasTrend> <http://www.w3.org/2000/01/rdf-schema#comment> "A Structured trajectory has one or more Trends."@en .
+<http://purl.org/net/sett#hasTrend> <http://www.w3.org/2000/01/rdf-schema#label> "has Trend"@en .
+<http://purl.org/net/sett#hasTrend> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasTrend"@en .
+# 
+# http://purl.org/net/sett#isCalculatedFrom
+<http://purl.org/net/sett#isCalculatedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#isCalculatedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Trend> .
+<http://purl.org/net/sett#isCalculatedFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#Slice> .
+<http://purl.org/net/sett#isCalculatedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "A Trend is calculated from a Slice."@en .
+<http://purl.org/net/sett#isCalculatedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "is Calculated From"@en .
+<http://purl.org/net/sett#isCalculatedFrom> <http://www.w3.org/2004/02/skos/core#prefLabel> "isCalculatedFrom"@en .
+# 
+# http://purl.org/net/sett#isComposedOfObservation
+<http://purl.org/net/sett#isComposedOfObservation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#isComposedOfObservation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Slice> .
+<http://purl.org/net/sett#isComposedOfObservation> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/net/sett#Observation> .
+<http://purl.org/net/sett#isComposedOfObservation> <http://www.w3.org/2000/01/rdf-schema#comment> "Slices are composed of Observations."@en .
+<http://purl.org/net/sett#isComposedOfObservation> <http://www.w3.org/2000/01/rdf-schema#label> "is Composed Of Observation"@en .
+<http://purl.org/net/sett#isComposedOfObservation> <http://www.w3.org/2004/02/skos/core#prefLabel> "isComposedOfObservation"@en .
+# 
+# http://purl.org/net/sett#monitorsIndice
+<http://purl.org/net/sett#monitorsIndice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/net/sett#monitorsIndice> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/net/sett#monitorsIndice> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/net/sett#monitorsIndice> <http://www.w3.org/2000/01/rdf-schema#comment> "An Environmental domain monitors an Indice."@en .
+<http://purl.org/net/sett#monitorsIndice> <http://www.w3.org/2000/01/rdf-schema#label> "monitorsI ndice"@en .
+<http://purl.org/net/sett#monitorsIndice> <http://www.w3.org/2004/02/skos/core#prefLabel> "monitorsIndice"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/net/sett#algorithmAppliedBreak
+<http://purl.org/net/sett#algorithmAppliedBreak> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/net/sett#algorithmAppliedBreak> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#StructuredTrajectory> .
+<http://purl.org/net/sett#algorithmAppliedBreak> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://purl.org/net/sett#algorithmAppliedBreak> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the applied algorithm used for the Break detection."@en .
+<http://purl.org/net/sett#algorithmAppliedBreak> <http://www.w3.org/2000/01/rdf-schema#label> "algorithm Applied for the Break detection"@en .
+<http://purl.org/net/sett#algorithmAppliedBreak> <http://www.w3.org/2004/02/skos/core#prefLabel> "algorithmAppliedBreak"@en .
+# 
+# http://purl.org/net/sett#algorithmAppliedTrend
+<http://purl.org/net/sett#algorithmAppliedTrend> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/net/sett#algorithmAppliedTrend> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#StructuredTrajectory> .
+<http://purl.org/net/sett#algorithmAppliedTrend> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://purl.org/net/sett#algorithmAppliedTrend> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the applied algorithm used for the Trend detection."@en .
+<http://purl.org/net/sett#algorithmAppliedTrend> <http://www.w3.org/2000/01/rdf-schema#label> "algorithm Applied for the Trend detection"@en .
+<http://purl.org/net/sett#algorithmAppliedTrend> <http://www.w3.org/2004/02/skos/core#prefLabel> "algorithmAppliedTrend"@en .
+# 
+# http://purl.org/net/sett#hasEpisodeOrder
+<http://purl.org/net/sett#hasEpisodeOrder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/net/sett#hasEpisodeOrder> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Episode> .
+<http://purl.org/net/sett#hasEpisodeOrder> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://purl.org/net/sett#hasEpisodeOrder> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes the Episode Order."@en .
+<http://purl.org/net/sett#hasEpisodeOrder> <http://www.w3.org/2000/01/rdf-schema#label> "has Episode Order"@en .
+<http://purl.org/net/sett#hasEpisodeOrder> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasEpisodeOrder"@en .
+# 
+# http://purl.org/net/sett#hasEventOrder
+<http://purl.org/net/sett#hasEventOrder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/net/sett#hasEventOrder> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Event> .
+<http://purl.org/net/sett#hasEventOrder> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://purl.org/net/sett#hasEventOrder> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes the Episode Order."@en .
+<http://purl.org/net/sett#hasEventOrder> <http://www.w3.org/2000/01/rdf-schema#label> "has Event Order"@en .
+<http://purl.org/net/sett#hasEventOrder> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasEventOrder"@en .
+# 
+# http://purl.org/net/sett#hasFittedValue
+<http://purl.org/net/sett#hasFittedValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/net/sett#hasFittedValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#FittedMeasure> .
+<http://purl.org/net/sett#hasFittedValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<http://purl.org/net/sett#hasFittedValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The fitted measure has a value."@en .
+<http://purl.org/net/sett#hasFittedValue> <http://www.w3.org/2000/01/rdf-schema#label> "has Fitted Value"@en .
+<http://purl.org/net/sett#hasFittedValue> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasFittedValue"@en .
+# 
+# http://purl.org/net/sett#hasInterceptValue
+<http://purl.org/net/sett#hasInterceptValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/net/sett#hasInterceptValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Trend> .
+<http://purl.org/net/sett#hasInterceptValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<http://purl.org/net/sett#hasInterceptValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the intercept value of the Trend line."@en .
+<http://purl.org/net/sett#hasInterceptValue> <http://www.w3.org/2000/01/rdf-schema#label> "has Intercept Value"@en .
+<http://purl.org/net/sett#hasInterceptValue> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasInterceptValue"@en .
+# 
+# http://purl.org/net/sett#hasMagnitudeValue
+<http://purl.org/net/sett#hasMagnitudeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/net/sett#hasMagnitudeValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Break> .
+<http://purl.org/net/sett#hasMagnitudeValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<http://purl.org/net/sett#hasMagnitudeValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The breakpoint is associated with a magnitude value, which is the distance between the breakpoint and the consecutive point."@en .
+<http://purl.org/net/sett#hasMagnitudeValue> <http://www.w3.org/2000/01/rdf-schema#label> "has Magnitude Value"@en .
+<http://purl.org/net/sett#hasMagnitudeValue> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasMagnitudeValue"@en .
+# 
+# http://purl.org/net/sett#hasPValue
+<http://purl.org/net/sett#hasPValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/net/sett#hasPValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Trend> .
+<http://purl.org/net/sett#hasPValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<http://purl.org/net/sett#hasPValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the p-value obtained from the regression analysis."@en .
+<http://purl.org/net/sett#hasPValue> <http://www.w3.org/2000/01/rdf-schema#label> "has p-value"@en .
+<http://purl.org/net/sett#hasPValue> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasPValue"@en .
+# 
+# http://purl.org/net/sett#hasSlopeValue
+<http://purl.org/net/sett#hasSlopeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/net/sett#hasSlopeValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/net/sett#Trend> .
+<http://purl.org/net/sett#hasSlopeValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<http://purl.org/net/sett#hasSlopeValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the slope value of the Trend line."@en .
+<http://purl.org/net/sett#hasSlopeValue> <http://www.w3.org/2000/01/rdf-schema#label> "has Slope Value"@en .
+<http://purl.org/net/sett#hasSlopeValue> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasSlopeValue"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/linked-data/cube#Observation
+<http://purl.org/linked-data/cube#Observation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.org/linked-data/cube#Slice
+<http://purl.org/linked-data/cube#Slice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.org/net/sett#Break
+<http://purl.org/net/sett#Break> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/net/sett#Break> <http://www.w3.org/2000/01/rdf-schema#comment> "A break (or breakpoint) belongs to a structured trajectory and denotes a significative change in the time series. It is calculated using Segmentation algorithms."@en .
+<http://purl.org/net/sett#Break> <http://www.w3.org/2000/01/rdf-schema#label> "Break"@en .
+<http://purl.org/net/sett#Break> <http://www.w3.org/2004/02/skos/core#prefLabel> "Break"@en .
+# 
+# http://purl.org/net/sett#DateTimeDescription
+<http://purl.org/net/sett#DateTimeDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.org/net/sett#Episode
+<http://purl.org/net/sett#Episode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/net/sett#Episode> <http://www.w3.org/2000/01/rdf-schema#comment> "An episode belongs to a semantic trajectory and is the result of annotating a trend component."@en .
+<http://purl.org/net/sett#Episode> <http://www.w3.org/2000/01/rdf-schema#label> "Episode"@en .
+<http://purl.org/net/sett#Episode> <http://www.w3.org/2004/02/skos/core#prefLabel> "Episode"@en .
+# 
+# http://purl.org/net/sett#Event
+<http://purl.org/net/sett#Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/net/sett#Event> <http://www.w3.org/2000/01/rdf-schema#comment> "An event belongs to a semantic trajectory and is the result of annotating a break component."@en .
+<http://purl.org/net/sett#Event> <http://www.w3.org/2000/01/rdf-schema#label> "Event"@en .
+<http://purl.org/net/sett#Event> <http://www.w3.org/2004/02/skos/core#prefLabel> "Event"@en .
+# 
+# http://purl.org/net/sett#FittedBegin
+<http://purl.org/net/sett#FittedBegin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/net/sett#FittedBegin> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/net/sett#FittedMeasure> .
+<http://purl.org/net/sett#FittedBegin> <http://www.w3.org/2000/01/rdf-schema#comment> "Fitted begin corresponds to the first fitted value, marking the start of the Trend."@en .
+<http://purl.org/net/sett#FittedBegin> <http://www.w3.org/2000/01/rdf-schema#label> "Fitted Begin"@en .
+<http://purl.org/net/sett#FittedBegin> <http://www.w3.org/2004/02/skos/core#prefLabel> "FittedBegin"@en .
+# 
+# http://purl.org/net/sett#FittedEnd
+<http://purl.org/net/sett#FittedEnd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/net/sett#FittedEnd> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/net/sett#FittedMeasure> .
+<http://purl.org/net/sett#FittedEnd> <http://www.w3.org/2000/01/rdf-schema#comment> "Fitted end represents the final predicted value in the trend, potentially coinciding with a breakpoint if it does not mark the end of the entire Trend sequence."@en .
+<http://purl.org/net/sett#FittedEnd> <http://www.w3.org/2000/01/rdf-schema#label> "Fitted End"@en .
+<http://purl.org/net/sett#FittedEnd> <http://www.w3.org/2004/02/skos/core#prefLabel> "FittedEnd"@en .
+# 
+# http://purl.org/net/sett#FittedMeasure
+<http://purl.org/net/sett#FittedMeasure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/net/sett#FittedMeasure> <http://www.w3.org/2000/01/rdf-schema#comment> "Fitted measures in linear regression are the predicted values calculated by the regression model."@en .
+<http://purl.org/net/sett#FittedMeasure> <http://www.w3.org/2000/01/rdf-schema#label> "Fitted Measure"@en .
+<http://purl.org/net/sett#FittedMeasure> <http://www.w3.org/2004/02/skos/core#definition> "Fitted measures in linear regression are the predicted values calculated by the regression model."@en .
+<http://purl.org/net/sett#FittedMeasure> <http://www.w3.org/2004/02/skos/core#prefLabel> "FittedMeasure"@en .
+# 
+# http://purl.org/net/sett#MultipleViewpointTrajectory
+<http://purl.org/net/sett#MultipleViewpointTrajectory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/net/sett#MultipleViewpointTrajectory> <http://www.w3.org/2000/01/rdf-schema#comment> "When a trajectory is associated with many viewpoints, these trajectories are known as Multiple Viewpoint Trajectories (MVT)."@en .
+<http://purl.org/net/sett#MultipleViewpointTrajectory> <http://www.w3.org/2000/01/rdf-schema#label> "Multiple Viewpoint Trajectory"@en .
+<http://purl.org/net/sett#MultipleViewpointTrajectory> <http://www.w3.org/2004/02/skos/core#prefLabel> "MultipleViewpointTrajectory"@en .
+# 
+# http://purl.org/net/sett#Observation
+<http://purl.org/net/sett#Observation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/net/sett#Observation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/linked-data/cube#Observation> .
+<http://purl.org/net/sett#Observation> <http://www.w3.org/2000/01/rdf-schema#comment> "An observation belongs to a raw trajectory and represents a measurement in the original time series."@en .
+<http://purl.org/net/sett#Observation> <http://www.w3.org/2000/01/rdf-schema#label> "Observation"@en .
+<http://purl.org/net/sett#Observation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Observation"@en .
+# 
+# http://purl.org/net/sett#PointOfView
+<http://purl.org/net/sett#PointOfView> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/net/sett#PointOfView> <http://www.w3.org/2000/01/rdf-schema#comment> "A semantic trajectory monitors one point of wiew, such as environmental domains."@en .
+<http://purl.org/net/sett#PointOfView> <http://www.w3.org/2000/01/rdf-schema#label> "Point Of View"@en .
+<http://purl.org/net/sett#PointOfView> <http://www.w3.org/2004/02/skos/core#prefLabel> "PointOfView"@en .
+# 
+# http://purl.org/net/sett#RawTrajectory
+<http://purl.org/net/sett#RawTrajectory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/net/sett#RawTrajectory> <http://www.w3.org/2000/01/rdf-schema#comment> "Raw trajectories are sequences of observations performed by agents, such as territorial units."@en .
+<http://purl.org/net/sett#RawTrajectory> <http://www.w3.org/2000/01/rdf-schema#label> "Raw Trajectory"@en .
+<http://purl.org/net/sett#RawTrajectory> <http://www.w3.org/2004/02/skos/core#prefLabel> "Raw Trajectory"@en .
+# 
+# http://purl.org/net/sett#SemanticTrajectory
+<http://purl.org/net/sett#SemanticTrajectory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/net/sett#SemanticTrajectory> <http://www.w3.org/2000/01/rdf-schema#comment> "Semantic trajectories are the result of annotating structured trajectories as sequences of Episodes and Events."@en .
+<http://purl.org/net/sett#SemanticTrajectory> <http://www.w3.org/2000/01/rdf-schema#label> "Semantic Trajectory"@en .
+<http://purl.org/net/sett#SemanticTrajectory> <http://www.w3.org/2004/02/skos/core#prefLabel> "Semantic Trajectory"@en .
+# 
+# http://purl.org/net/sett#Slice
+<http://purl.org/net/sett#Slice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/net/sett#Slice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/linked-data/cube#Slice> .
+<http://purl.org/net/sett#Slice> <http://www.w3.org/2000/01/rdf-schema#comment> "A slice belongs to a raw trajectory and refers to a group of observations from the original time series used to calculate a given trend."@en .
+<http://purl.org/net/sett#Slice> <http://www.w3.org/2000/01/rdf-schema#label> "Slice"@en .
+<http://purl.org/net/sett#Slice> <http://www.w3.org/2004/02/skos/core#prefLabel> "Slice"@en .
+# 
+# http://purl.org/net/sett#StructuredTrajectory
+<http://purl.org/net/sett#StructuredTrajectory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/net/sett#StructuredTrajectory> <http://www.w3.org/2000/01/rdf-schema#comment> "Structured trajectories are the result of segment Raw trajectories into sequences of Trends and Breaks."@en .
+<http://purl.org/net/sett#StructuredTrajectory> <http://www.w3.org/2000/01/rdf-schema#label> "Structured Trajectory"@en .
+<http://purl.org/net/sett#StructuredTrajectory> <http://www.w3.org/2004/02/skos/core#prefLabel> "Structured Trajectory"@en .
+# 
+# http://purl.org/net/sett#TerritorialUnit
+<http://purl.org/net/sett#TerritorialUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.org/net/sett#Trend
+<http://purl.org/net/sett#Trend> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/net/sett#Trend> <http://www.w3.org/2000/01/rdf-schema#comment> "A trend belongs to a structured trajectory and is calculated using Segmentation  algorithms."@en .
+<http://purl.org/net/sett#Trend> <http://www.w3.org/2000/01/rdf-schema#label> "Trend"@en .
+<http://purl.org/net/sett#Trend> <http://www.w3.org/2004/02/skos/core#prefLabel> "Trend"@en .
+# 
+# http://www.w3.org/2004/02/skos/core#Concept
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

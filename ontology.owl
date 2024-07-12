@@ -1,0 +1,741 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/net/sett#"
+     xml:base="http://purl.org/net/sett"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/">
+    <owl:Ontology rdf:about="http://purl.org/net/sett#">
+        <owl:versionIRI rdf:resource="http://purl.org/net/sett/1.0"/>
+        <dc:abstract xml:lang="en">The negative impact of human activities on our planet has increased the interest of stakeholders — from policymakers to citizens — in monitoring and understanding local environmental changes. However, despite being openly available, remotely-sensed Earth observation Time Series (EO-TS) are complex and difficult for non-experts to interpret. We introduce the EO-evo (Earth Observation Evolution) ontology to to describe the Environmental semantic trajectories of EO data for both expert and non-expert users.</dc:abstract>
+        <dc:description xml:lang="en">EO-evo is a multi-layer ontology designed to describe the semantic trajectories of Earth Observation (EO) data within the Environmental domain. The ontology embeds three types of trajectories: raw, structured, and semantic. These trajectories provide a comprehensive framework for capturing, organizing, and analyzing the spatio-temporal evolution of Earth’s dynamics.</dc:description>
+        <dc:title xml:lang="en">The EO-evo ontology</dc:title>
+        <terms:created xml:lang="en">July 12th, 2024</terms:created>
+        <terms:creator xml:lang="en">(1) Daniela Fernanda Milon-Flores</terms:creator>
+        <terms:creator xml:lang="en">(2) Camille Bernard</terms:creator>
+        <terms:creator xml:lang="en">(3) Jérôme Gensel</terms:creator>
+        <terms:creator xml:lang="en">(4) Gregory Giuliani</terms:creator>
+        <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <schema:citation xml:lang="en">Cite this vocabulary as: Milon-Flores, D. ; Bernard, C. ; Gensel, J. and Giuliani, G. The EO-evo ontology 1.0</schema:citation>
+        <owl:versionInfo xml:lang="en">1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/abstract -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/abstract"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://schema.org/citation -->
+
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/citation"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/net/sett#EpisodeIsAnnotatedFrom -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#EpisodeIsAnnotatedFrom">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Episode"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#Trend"/>
+        <rdfs:comment xml:lang="en">An Episode is annotated from a Trend.</rdfs:comment>
+        <rdfs:label xml:lang="en">Episode is Annotated from</rdfs:label>
+        <skos:prefLabel xml:lang="en">EpisodeIsAnnotatedFrom</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#EventIsAnnotatedFrom -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#EventIsAnnotatedFrom">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Event"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#Break"/>
+        <rdfs:comment xml:lang="en">An Event is Annotated From a Break.</rdfs:comment>
+        <rdfs:label xml:lang="en">Event is Annotated From</rdfs:label>
+        <skos:prefLabel xml:lang="en">EventIsAnnotatedFrom</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#correspondsTo -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#correspondsTo">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Break"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#Observation"/>
+        <rdfs:comment xml:lang="en"> </rdfs:comment>
+        <rdfs:label xml:lang="en">corresponds To</rdfs:label>
+        <skos:prefLabel xml:lang="en">correspondsTo</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasAnnotationEpisodeAbstract -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasAnnotationEpisodeAbstract">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Episode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">The Episode is annotated with semantic descriptions. This annotations corresponds to the Abstract layer.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Annotation Abstract</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasAnnotationAbstract</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasAnnotationEpisodeDomain -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasAnnotationEpisodeDomain">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Episode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">The Episode is annotated with semantic descriptions. This annotations corresponds to the Environmental domain layer.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Annotation Episode Domain</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasAnnotationEpisodeDomain</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasAnnotationEvent -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasAnnotationEvent">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">The Event is annotated with semantic descriptions.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Annotation Event</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasAnnotationEvent</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasBreak -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasBreak">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#StructuredTrajectory"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#Break"/>
+        <rdfs:comment xml:lang="en">A Structured trajectory has zero or more Breaks.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Break</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasBreak</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasDate -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasDate">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#FittedMeasure"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#DateTimeDescription"/>
+        <rdfs:comment xml:lang="en">Denotes the date of a fitted measurement.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Date</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasDate</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasDateBreak -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasDateBreak">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Break"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#DateTimeDescription"/>
+        <rdfs:comment xml:lang="en">Denotes the approximate date of the breakpoint.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Date</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasDate</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasDomain -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasDomain">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#PointOfView"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">Denotes the Environmental domain.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Domain</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasDomain</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasEpisode -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasEpisode">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#SemanticTrajectory"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#Episode"/>
+        <rdfs:comment xml:lang="en">A Semantic trajectory has one or more Episodes.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Episode</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasEpisode</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasEvent -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasEvent">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#SemanticTrajectory"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#Event"/>
+        <rdfs:comment xml:lang="en">A Semantic trajectory has zero or more Events.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Event</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasEvent</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasFittedBegin -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasFittedBegin">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Trend"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#FittedBegin"/>
+        <rdfs:comment xml:lang="en">The trend line starts with its first fitted value.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Fitted Begin</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasFittedBegin</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasFittedEnd -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasFittedEnd">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Trend"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#FittedEnd"/>
+        <rdfs:comment xml:lang="en">The trend line finishes with its last fitted value.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Fitted End</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasFittedEnd</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasMVT -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasMVT">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#TerritorialUnit"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#MultipleViewpointTrajectory"/>
+        <rdfs:comment xml:lang="en">A Territorial Unit (TU) has Multiple Viewpoint Trajectory (MVT).</rdfs:comment>
+        <rdfs:label xml:lang="en">has Multiple Viewpoint Trajectory (MVT)</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasMVT</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasObservation -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasObservation">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#RawTrajectory"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#Observation"/>
+        <rdfs:comment xml:lang="en">A raw trajectory consists of one or more observations that represent its movement.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Observation</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasObservation</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasPointOfView -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasPointOfView">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#SemanticTrajectory"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#PointOfView"/>
+        <rdfs:comment xml:lang="en">A Semantic trajectory has a Point Of View.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Point Of View</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasPointOfView</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasSemanticTrajectory -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasSemanticTrajectory">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#MultipleViewpointTrajectory"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#SemanticTrajectory"/>
+        <rdfs:comment xml:lang="en">A Multiple Viewpoint Trajectory (MVP) is composed of one Semantic trajectory.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Semantic Trajectory</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasSemanticTrajectory</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasTrend -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#hasTrend">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#StructuredTrajectory"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#Trend"/>
+        <rdfs:comment xml:lang="en">A Structured trajectory has one or more Trends.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Trend</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasTrend</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#isCalculatedFrom -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#isCalculatedFrom">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Trend"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#Slice"/>
+        <rdfs:comment xml:lang="en">A Trend is calculated from a Slice.</rdfs:comment>
+        <rdfs:label xml:lang="en">is Calculated From</rdfs:label>
+        <skos:prefLabel xml:lang="en">isCalculatedFrom</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#isComposedOfObservation -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#isComposedOfObservation">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Slice"/>
+        <rdfs:range rdf:resource="http://purl.org/net/sett#Observation"/>
+        <rdfs:comment xml:lang="en">Slices are composed of Observations.</rdfs:comment>
+        <rdfs:label xml:lang="en">is Composed Of Observation</rdfs:label>
+        <skos:prefLabel xml:lang="en">isComposedOfObservation</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#monitorsIndice -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/sett#monitorsIndice">
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">An Environmental domain monitors an Indice.</rdfs:comment>
+        <rdfs:label xml:lang="en">monitorsI ndice</rdfs:label>
+        <skos:prefLabel xml:lang="en">monitorsIndice</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/net/sett#algorithmAppliedBreak -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/sett#algorithmAppliedBreak">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#StructuredTrajectory"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Refers to the applied algorithm used for the Break detection.</rdfs:comment>
+        <rdfs:label xml:lang="en">algorithm Applied for the Break detection</rdfs:label>
+        <skos:prefLabel xml:lang="en">algorithmAppliedBreak</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#algorithmAppliedTrend -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/sett#algorithmAppliedTrend">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#StructuredTrajectory"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Refers to the applied algorithm used for the Trend detection.</rdfs:comment>
+        <rdfs:label xml:lang="en">algorithm Applied for the Trend detection</rdfs:label>
+        <skos:prefLabel xml:lang="en">algorithmAppliedTrend</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasEpisodeOrder -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/sett#hasEpisodeOrder">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Episode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Denotes the Episode Order.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Episode Order</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasEpisodeOrder</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasEventOrder -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/sett#hasEventOrder">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Denotes the Episode Order.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Event Order</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasEventOrder</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasFittedValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/sett#hasFittedValue">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#FittedMeasure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">The fitted measure has a value.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Fitted Value</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasFittedValue</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasInterceptValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/sett#hasInterceptValue">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Trend"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">Refers to the intercept value of the Trend line.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Intercept Value</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasInterceptValue</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasMagnitudeValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/sett#hasMagnitudeValue">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Break"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">The breakpoint is associated with a magnitude value, which is the distance between the breakpoint and the consecutive point.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Magnitude Value</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasMagnitudeValue</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasPValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/sett#hasPValue">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Trend"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">Refers to the p-value obtained from the regression analysis.</rdfs:comment>
+        <rdfs:label xml:lang="en">has p-value</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasPValue</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/sett#hasSlopeValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/sett#hasSlopeValue">
+        <rdfs:domain rdf:resource="http://purl.org/net/sett#Trend"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">Refers to the slope value of the Trend line.</rdfs:comment>
+        <rdfs:label xml:lang="en">has Slope Value</rdfs:label>
+        <skos:prefLabel xml:lang="en">hasSlopeValue</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/linked-data/cube#Observation -->
+
+
+    <owl:Class rdf:about="http://purl.org/linked-data/cube#Observation"/>
+    
+
+
+    <!-- http://purl.org/linked-data/cube#Slice -->
+
+
+    <owl:Class rdf:about="http://purl.org/linked-data/cube#Slice"/>
+    
+
+
+    <!-- http://purl.org/net/sett#Break -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#Break">
+        <rdfs:comment xml:lang="en">A break (or breakpoint) belongs to a structured trajectory and denotes a significative change in the time series. It is calculated using Segmentation algorithms.</rdfs:comment>
+        <rdfs:label xml:lang="en">Break</rdfs:label>
+        <skos:prefLabel xml:lang="en">Break</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/sett#DateTimeDescription -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#DateTimeDescription"/>
+    
+
+
+    <!-- http://purl.org/net/sett#Episode -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#Episode">
+        <rdfs:comment xml:lang="en">An episode belongs to a semantic trajectory and is the result of annotating a trend component.</rdfs:comment>
+        <rdfs:label xml:lang="en">Episode</rdfs:label>
+        <skos:prefLabel xml:lang="en">Episode</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/sett#Event -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#Event">
+        <rdfs:comment xml:lang="en">An event belongs to a semantic trajectory and is the result of annotating a break component.</rdfs:comment>
+        <rdfs:label xml:lang="en">Event</rdfs:label>
+        <skos:prefLabel xml:lang="en">Event</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/sett#FittedBegin -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#FittedBegin">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/sett#FittedMeasure"/>
+        <rdfs:comment xml:lang="en">Fitted begin corresponds to the first fitted value, marking the start of the Trend.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fitted Begin</rdfs:label>
+        <skos:prefLabel xml:lang="en">FittedBegin</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/sett#FittedEnd -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#FittedEnd">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/sett#FittedMeasure"/>
+        <rdfs:comment xml:lang="en">Fitted end represents the final predicted value in the trend, potentially coinciding with a breakpoint if it does not mark the end of the entire Trend sequence.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fitted End</rdfs:label>
+        <skos:prefLabel xml:lang="en">FittedEnd</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/sett#FittedMeasure -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#FittedMeasure">
+        <rdfs:comment xml:lang="en">Fitted measures in linear regression are the predicted values calculated by the regression model.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fitted Measure</rdfs:label>
+        <skos:definition xml:lang="en">Fitted measures in linear regression are the predicted values calculated by the regression model.</skos:definition>
+        <skos:prefLabel xml:lang="en">FittedMeasure</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/sett#MultipleViewpointTrajectory -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#MultipleViewpointTrajectory">
+        <rdfs:comment xml:lang="en">When a trajectory is associated with many viewpoints, these trajectories are known as Multiple Viewpoint Trajectories (MVT).</rdfs:comment>
+        <rdfs:label xml:lang="en">Multiple Viewpoint Trajectory</rdfs:label>
+        <skos:prefLabel xml:lang="en">MultipleViewpointTrajectory</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/sett#Observation -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#Observation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/linked-data/cube#Observation"/>
+        <rdfs:comment xml:lang="en">An observation belongs to a raw trajectory and represents a measurement in the original time series.</rdfs:comment>
+        <rdfs:label xml:lang="en">Observation</rdfs:label>
+        <skos:prefLabel xml:lang="en">Observation</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/sett#PointOfView -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#PointOfView">
+        <rdfs:comment xml:lang="en">A semantic trajectory monitors one point of wiew, such as environmental domains.</rdfs:comment>
+        <rdfs:label xml:lang="en">Point Of View</rdfs:label>
+        <skos:prefLabel xml:lang="en">PointOfView</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/sett#RawTrajectory -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#RawTrajectory">
+        <rdfs:comment xml:lang="en">Raw trajectories are sequences of observations performed by agents, such as territorial units.</rdfs:comment>
+        <rdfs:label xml:lang="en">Raw Trajectory</rdfs:label>
+        <skos:prefLabel xml:lang="en">Raw Trajectory</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/sett#SemanticTrajectory -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#SemanticTrajectory">
+        <rdfs:comment xml:lang="en">Semantic trajectories are the result of annotating structured trajectories as sequences of Episodes and Events.</rdfs:comment>
+        <rdfs:label xml:lang="en">Semantic Trajectory</rdfs:label>
+        <skos:prefLabel xml:lang="en">Semantic Trajectory</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/sett#Slice -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#Slice">
+        <rdfs:subClassOf rdf:resource="http://purl.org/linked-data/cube#Slice"/>
+        <rdfs:comment xml:lang="en">A slice belongs to a raw trajectory and refers to a group of observations from the original time series used to calculate a given trend.</rdfs:comment>
+        <rdfs:label xml:lang="en">Slice</rdfs:label>
+        <skos:prefLabel xml:lang="en">Slice</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/sett#StructuredTrajectory -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#StructuredTrajectory">
+        <rdfs:comment xml:lang="en">Structured trajectories are the result of segment Raw trajectories into sequences of Trends and Breaks.</rdfs:comment>
+        <rdfs:label xml:lang="en">Structured Trajectory</rdfs:label>
+        <skos:prefLabel xml:lang="en">Structured Trajectory</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/sett#TerritorialUnit -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#TerritorialUnit"/>
+    
+
+
+    <!-- http://purl.org/net/sett#Trend -->
+
+
+    <owl:Class rdf:about="http://purl.org/net/sett#Trend">
+        <rdfs:comment xml:lang="en">A trend belongs to a structured trajectory and is calculated using Segmentation  algorithms.</rdfs:comment>
+        <rdfs:label xml:lang="en">Trend</rdfs:label>
+        <skos:prefLabel xml:lang="en">Trend</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

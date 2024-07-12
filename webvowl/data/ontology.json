@@ -1,0 +1,1372 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "http://purl.org/linked-data/cube", "http://purl.org/net/sett", "http://www.w3.org/2004/02/skos/core" ],
+    "title" : {
+      "en" : "The EO-evo ontology"
+    },
+    "iri" : "http://purl.org/net/sett#",
+    "version" : "1.0",
+    "author" : [ "(3) Jérôme Gensel", "(4) Gregory Giuliani", "(1) Daniela Fernanda Milon-Flores", "(2) Camille Bernard" ],
+    "description" : {
+      "en" : "EO-evo is a multi-layer ontology designed to describe the semantic trajectories of Earth Observation (EO) data within the Environmental domain. The ontology embeds three types of trajectories: raw, structured, and semantic. These trajectories provide a comprehensive framework for capturing, organizing, and analyzing the spatio-temporal evolution of Earth’s dynamics."
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "http://creativecommons.org/licenses/by/4.0/",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "en",
+        "value" : "(4) Gregory Giuliani",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "en",
+        "value" : "(1) Daniela Fernanda Milon-Flores",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "en",
+        "value" : "(3) Jérôme Gensel",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "en",
+        "value" : "(2) Camille Bernard",
+        "type" : "label"
+      } ],
+      "citation" : [ {
+        "identifier" : "citation",
+        "language" : "en",
+        "value" : "Cite this vocabulary as: Milon-Flores, D. ; Bernard, C. ; Gensel, J. and Giuliani, G. The EO-evo ontology 1.0",
+        "type" : "label"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "en",
+        "value" : "July 12th, 2024",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "en",
+        "value" : "1.0",
+        "type" : "label"
+      } ],
+      "abstract" : [ {
+        "identifier" : "abstract",
+        "language" : "en",
+        "value" : "The negative impact of human activities on our planet has increased the interest of stakeholders — from policymakers to citizens — in monitoring and understanding local environmental changes. However, despite being openly available, remotely-sensed Earth observation Time Series (EO-TS) are complex and difficult for non-experts to interpret. We introduce the EO-evo (Earth Observation Evolution) ontology to to describe the Environmental semantic trajectories of EO data for both expert and non-expert users.",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "The EO-evo ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "42",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "44",
+    "type" : "owl:Class"
+  }, {
+    "id" : "45",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "40",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "17",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "49",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "51",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://purl.org/linked-data/cube#Observation",
+    "baseIri" : "http://purl.org/linked-data/cube",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Observation"
+    },
+    "subClasses" : [ "1" ],
+    "attributes" : [ "external" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://purl.org/net/sett#FittedEnd",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "FittedEnd",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "FittedEnd",
+      "en" : "Fitted End"
+    },
+    "comment" : {
+      "en" : "Fitted end represents the final predicted value in the trend, potentially coinciding with a breakpoint if it does not mark the end of the entire Trend sequence."
+    },
+    "id" : "5",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#Concept",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concept"
+    },
+    "attributes" : [ "external" ],
+    "id" : "7"
+  }, {
+    "iri" : "http://purl.org/net/sett#Observation",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Observation",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Observation",
+      "en" : "Observation"
+    },
+    "comment" : {
+      "en" : "An observation belongs to a raw trajectory and represents a measurement in the original time series."
+    },
+    "id" : "1",
+    "superClasses" : [ "0" ]
+  }, {
+    "iri" : "http://purl.org/net/sett#Event",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Event",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Event",
+      "en" : "Event"
+    },
+    "comment" : {
+      "en" : "An event belongs to a semantic trajectory and is the result of annotating a break component."
+    },
+    "id" : "20"
+  }, {
+    "iri" : "http://purl.org/net/sett#RawTrajectory",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Raw Trajectory",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "RawTrajectory",
+      "en" : "Raw Trajectory"
+    },
+    "comment" : {
+      "en" : "Raw trajectories are sequences of observations performed by agents, such as territorial units."
+    },
+    "id" : "22"
+  }, {
+    "iri" : "http://purl.org/net/sett#StructuredTrajectory",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Structured Trajectory",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "StructuredTrajectory",
+      "en" : "Structured Trajectory"
+    },
+    "comment" : {
+      "en" : "Structured trajectories are the result of segment Raw trajectories into sequences of Trends and Breaks."
+    },
+    "id" : "16"
+  }, {
+    "iri" : "http://purl.org/net/sett#Break",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Break",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Break",
+      "en" : "Break"
+    },
+    "comment" : {
+      "en" : "A break (or breakpoint) belongs to a structured trajectory and denotes a significative change in the time series. It is calculated using Segmentation algorithms."
+    },
+    "id" : "24"
+  }, {
+    "iri" : "http://purl.org/net/sett#FittedMeasure",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "FittedMeasure",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Fitted measures in linear regression are the predicted values calculated by the regression model.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "FittedMeasure",
+      "en" : "Fitted Measure"
+    },
+    "subClasses" : [ "14", "5" ],
+    "comment" : {
+      "en" : "Fitted measures in linear regression are the predicted values calculated by the regression model."
+    },
+    "id" : "6"
+  }, {
+    "iri" : "http://purl.org/net/sett#FittedBegin",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "FittedBegin",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "FittedBegin",
+      "en" : "Fitted Begin"
+    },
+    "comment" : {
+      "en" : "Fitted begin corresponds to the first fitted value, marking the start of the Trend."
+    },
+    "id" : "14",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://purl.org/linked-data/cube#Slice",
+    "baseIri" : "http://purl.org/linked-data/cube",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Slice"
+    },
+    "subClasses" : [ "28" ],
+    "attributes" : [ "external" ],
+    "id" : "27"
+  }, {
+    "iri" : "http://purl.org/net/sett#MultipleViewpointTrajectory",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "MultipleViewpointTrajectory",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "MultipleViewpointTrajectory",
+      "en" : "Multiple Viewpoint Trajectory"
+    },
+    "comment" : {
+      "en" : "When a trajectory is associated with many viewpoints, these trajectories are known as Multiple Viewpoint Trajectories (MVT)."
+    },
+    "id" : "10"
+  }, {
+    "iri" : "http://purl.org/net/sett#Trend",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Trend",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Trend",
+      "en" : "Trend"
+    },
+    "comment" : {
+      "en" : "A trend belongs to a structured trajectory and is calculated using Segmentation  algorithms."
+    },
+    "id" : "4"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "26",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "42",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://purl.org/net/sett#PointOfView",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "PointOfView",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "PointOfView",
+      "en" : "Point Of View"
+    },
+    "comment" : {
+      "en" : "A semantic trajectory monitors one point of wiew, such as environmental domains."
+    },
+    "id" : "44"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "45",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://purl.org/net/sett#Slice",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Slice",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Slice",
+      "en" : "Slice"
+    },
+    "comment" : {
+      "en" : "A slice belongs to a raw trajectory and refers to a group of observations from the original time series used to calculate a given trend."
+    },
+    "id" : "28",
+    "superClasses" : [ "27" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "19",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "33",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "40",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "38",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "id" : "17",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://purl.org/net/sett#TerritorialUnit",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TerritorialUnit"
+    },
+    "id" : "9"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "id" : "49",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://purl.org/net/sett#DateTimeDescription",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DateTimeDescription"
+    },
+    "id" : "51"
+  }, {
+    "iri" : "http://purl.org/net/sett#Episode",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Episode",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Episode",
+      "en" : "Episode"
+    },
+    "comment" : {
+      "en" : "An episode belongs to a semantic trajectory and is the result of annotating a trend component."
+    },
+    "id" : "3"
+  }, {
+    "iri" : "http://purl.org/net/sett#SemanticTrajectory",
+    "baseIri" : "http://purl.org/net/sett",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Semantic Trajectory",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "SemanticTrajectory",
+      "en" : "Semantic Trajectory"
+    },
+    "comment" : {
+      "en" : "Semantic trajectories are the result of annotating structured trajectories as sequences of Episodes and Events."
+    },
+    "id" : "12"
+  } ],
+  "property" : [ {
+    "id" : "2",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "8",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "11",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "13",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "15",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "21",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "25",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "30",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "31",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "32",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "35",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "36",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "37",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "39",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "41",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "43",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "46",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "47",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "48",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "52",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "53",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "54",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "55",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "56",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "57",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "58",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "59",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "60",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "61",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "62",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://purl.org/net/sett#EpisodeIsAnnotatedFrom",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "4",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "EpisodeIsAnnotatedFrom",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "EpisodeIsAnnotatedFrom",
+      "en" : "Episode is Annotated from"
+    },
+    "domain" : "3",
+    "comment" : {
+      "en" : "An Episode is annotated from a Trend."
+    },
+    "attributes" : [ "object" ],
+    "id" : "2"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasMVT",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "10",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasMVT",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasMVT",
+      "en" : "has Multiple Viewpoint Trajectory (MVT)"
+    },
+    "domain" : "9",
+    "comment" : {
+      "en" : "A Territorial Unit (TU) has Multiple Viewpoint Trajectory (MVT)."
+    },
+    "attributes" : [ "object" ],
+    "id" : "8"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasEpisode",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "3",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasEpisode",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasEpisode",
+      "en" : "has Episode"
+    },
+    "domain" : "12",
+    "comment" : {
+      "en" : "A Semantic trajectory has one or more Episodes."
+    },
+    "attributes" : [ "object" ],
+    "id" : "11"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasFittedBegin",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "14",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasFittedBegin",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasFittedBegin",
+      "en" : "has Fitted Begin"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "The trend line starts with its first fitted value."
+    },
+    "attributes" : [ "object" ],
+    "id" : "13"
+  }, {
+    "iri" : "http://purl.org/net/sett#algorithmAppliedBreak",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "17",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "algorithmAppliedBreak",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "algorithmAppliedBreak",
+      "en" : "algorithm Applied for the Break detection"
+    },
+    "domain" : "16",
+    "comment" : {
+      "en" : "Refers to the applied algorithm used for the Break detection."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "15"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasInterceptValue",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "19",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasInterceptValue",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasInterceptValue",
+      "en" : "has Intercept Value"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "Refers to the intercept value of the Trend line."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "18"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasAnnotationEvent",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "7",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasAnnotationEvent",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasAnnotationEvent",
+      "en" : "has Annotation Event"
+    },
+    "domain" : "20",
+    "comment" : {
+      "en" : "The Event is annotated with semantic descriptions."
+    },
+    "attributes" : [ "object" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasAnnotationEpisodeAbstract",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "7",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasAnnotationAbstract",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasAnnotationEpisodeAbstract",
+      "en" : "has Annotation Abstract"
+    },
+    "domain" : "3",
+    "comment" : {
+      "en" : "The Episode is annotated with semantic descriptions. This annotations corresponds to the Abstract layer."
+    },
+    "attributes" : [ "object" ],
+    "id" : "23"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasEpisodeOrder",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "26",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasEpisodeOrder",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasEpisodeOrder",
+      "en" : "has Episode Order"
+    },
+    "domain" : "3",
+    "comment" : {
+      "en" : "Denotes the Episode Order."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "25"
+  }, {
+    "iri" : "http://purl.org/net/sett#isComposedOfObservation",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "1",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "isComposedOfObservation",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isComposedOfObservation",
+      "en" : "is Composed Of Observation"
+    },
+    "domain" : "28",
+    "comment" : {
+      "en" : "Slices are composed of Observations."
+    },
+    "attributes" : [ "object" ],
+    "id" : "29"
+  }, {
+    "range" : "6",
+    "domain" : "14",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "30"
+  }, {
+    "range" : "27",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "31"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasMagnitudeValue",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "33",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasMagnitudeValue",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasMagnitudeValue",
+      "en" : "has Magnitude Value"
+    },
+    "domain" : "24",
+    "comment" : {
+      "en" : "The breakpoint is associated with a magnitude value, which is the distance between the breakpoint and the consecutive point."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "32"
+  }, {
+    "range" : "6",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "34"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasEvent",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "20",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasEvent",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasEvent",
+      "en" : "has Event"
+    },
+    "domain" : "12",
+    "comment" : {
+      "en" : "A Semantic trajectory has zero or more Events."
+    },
+    "attributes" : [ "object" ],
+    "id" : "35"
+  }, {
+    "iri" : "http://purl.org/net/sett#EventIsAnnotatedFrom",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "24",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "EventIsAnnotatedFrom",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "EventIsAnnotatedFrom",
+      "en" : "Event is Annotated From"
+    },
+    "domain" : "20",
+    "comment" : {
+      "en" : "An Event is Annotated From a Break."
+    },
+    "attributes" : [ "object" ],
+    "id" : "36"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasSlopeValue",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "38",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasSlopeValue",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasSlopeValue",
+      "en" : "has Slope Value"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "Refers to the slope value of the Trend line."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "37"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasPValue",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "40",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasPValue",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasPValue",
+      "en" : "has p-value"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "Refers to the p-value obtained from the regression analysis."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "39"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasEventOrder",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "42",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasEventOrder",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasEventOrder",
+      "en" : "has Event Order"
+    },
+    "domain" : "20",
+    "comment" : {
+      "en" : "Denotes the Episode Order."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "41"
+  }, {
+    "iri" : "http://purl.org/net/sett#monitorsIndice",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "7",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "monitorsIndice",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "monitorsIndice",
+      "en" : "monitorsI ndice"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "An Environmental domain monitors an Indice."
+    },
+    "attributes" : [ "object" ],
+    "id" : "43"
+  }, {
+    "range" : "0",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "46"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasFittedEnd",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "5",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasFittedEnd",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasFittedEnd",
+      "en" : "has Fitted End"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "The trend line finishes with its last fitted value."
+    },
+    "attributes" : [ "object" ],
+    "id" : "47"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasBreak",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "24",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasBreak",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasBreak",
+      "en" : "has Break"
+    },
+    "domain" : "16",
+    "comment" : {
+      "en" : "A Structured trajectory has zero or more Breaks."
+    },
+    "attributes" : [ "object" ],
+    "id" : "48"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasAnnotationEpisodeDomain",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "7",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasAnnotationEpisodeDomain",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasAnnotationEpisodeDomain",
+      "en" : "has Annotation Episode Domain"
+    },
+    "domain" : "3",
+    "comment" : {
+      "en" : "The Episode is annotated with semantic descriptions. This annotations corresponds to the Environmental domain layer."
+    },
+    "attributes" : [ "object" ],
+    "id" : "50"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasDateBreak",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "51",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasDate",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasDateBreak",
+      "en" : "has Date"
+    },
+    "domain" : "24",
+    "comment" : {
+      "en" : "Denotes the approximate date of the breakpoint."
+    },
+    "attributes" : [ "object" ],
+    "id" : "52"
+  }, {
+    "iri" : "http://purl.org/net/sett#isCalculatedFrom",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "28",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "isCalculatedFrom",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isCalculatedFrom",
+      "en" : "is Calculated From"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "A Trend is calculated from a Slice."
+    },
+    "attributes" : [ "object" ],
+    "id" : "53"
+  }, {
+    "iri" : "http://purl.org/net/sett#algorithmAppliedTrend",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "49",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "algorithmAppliedTrend",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "algorithmAppliedTrend",
+      "en" : "algorithm Applied for the Trend detection"
+    },
+    "domain" : "16",
+    "comment" : {
+      "en" : "Refers to the applied algorithm used for the Trend detection."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "54"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasFittedValue",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "45",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasFittedValue",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasFittedValue",
+      "en" : "has Fitted Value"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "The fitted measure has a value."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "55"
+  }, {
+    "iri" : "http://purl.org/net/sett#correspondsTo",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "1",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "correspondsTo",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "correspondsTo",
+      "en" : "corresponds To"
+    },
+    "domain" : "24",
+    "comment" : {
+      "en" : " "
+    },
+    "attributes" : [ "object" ],
+    "id" : "56"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasObservation",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "1",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasObservation",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasObservation",
+      "en" : "has Observation"
+    },
+    "domain" : "22",
+    "comment" : {
+      "en" : "A raw trajectory consists of one or more observations that represent its movement."
+    },
+    "attributes" : [ "object" ],
+    "id" : "57"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasDomain",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "7",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasDomain",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasDomain",
+      "en" : "has Domain"
+    },
+    "domain" : "44",
+    "comment" : {
+      "en" : "Denotes the Environmental domain."
+    },
+    "attributes" : [ "object" ],
+    "id" : "58"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasPointOfView",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "44",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasPointOfView",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasPointOfView",
+      "en" : "has Point Of View"
+    },
+    "domain" : "12",
+    "comment" : {
+      "en" : "A Semantic trajectory has a Point Of View."
+    },
+    "attributes" : [ "object" ],
+    "id" : "59"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasTrend",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "4",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasTrend",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasTrend",
+      "en" : "has Trend"
+    },
+    "domain" : "16",
+    "comment" : {
+      "en" : "A Structured trajectory has one or more Trends."
+    },
+    "attributes" : [ "object" ],
+    "id" : "60"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasSemanticTrajectory",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "12",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasSemanticTrajectory",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasSemanticTrajectory",
+      "en" : "has Semantic Trajectory"
+    },
+    "domain" : "10",
+    "comment" : {
+      "en" : "A Multiple Viewpoint Trajectory (MVP) is composed of one Semantic trajectory."
+    },
+    "attributes" : [ "object" ],
+    "id" : "61"
+  }, {
+    "iri" : "http://purl.org/net/sett#hasDate",
+    "baseIri" : "http://purl.org/net/sett",
+    "range" : "51",
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasDate",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasDate",
+      "en" : "has Date"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "Denotes the date of a fitted measurement."
+    },
+    "attributes" : [ "object" ],
+    "id" : "62"
+  } ]
+}

@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>The EO-evo ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://purl.org/net/sett#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/net/sett#","name":"The EO-evo ontology", "headline":"The negative impact of human activities on our planet has increased the interest of stakeholders — from policymakers to citizens — in monitoring and understanding local environmental changes. However, despite being openly available, remotely-sensed Earth observation Time Series (EO-TS) are complex and difficult for non-experts to interpret. We introduce the EO-evo (Earth Observation Evolution) ontology to to describe the Environmental semantic trajectories of EO data for both expert and non-expert users.", "dateReleased":"July 12th, 2024", "version":"1.0", "license":"http://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"(1) Daniela Fernanda Milon-Flores"},{"@type":"Person","name":"(2) Camille Bernard"},{"@type":"Person","name":"(3) Jérôme Gensel"},{"@type":"Person","name":"(4) Gregory Giuliani"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>The EO-evo ontology</h1>
+<h2>Release: July 12th, 2024</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="http://purl.org/net/sett/1.0">http://purl.org/net/sett/1.0</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="http://purl.org/net/sett#">http://purl.org/net/sett#</a></dd>
+<dt>Revision:</dt>
+<dd>1.0</dd>
+<dt>Authors:</dt>
+<dd>(1) Daniela Fernanda Milon-Flores</dd><dd>(2) Camille Bernard</dd><dd>(3) Jérôme Gensel</dd><dd>(4) Gregory Giuliani</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-http://creativecommons.org/licenses/by/4.0/-blue.svg" alt="http://creativecommons.org/licenses/by/4.0/" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Cite this vocabulary as: Milon-Flores, D. ; Bernard, C. ; Gensel, J. and Giuliani, G. The EO-evo ontology 1.0</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The negative impact of human activities on our planet has increased the interest of stakeholders — from policymakers to citizens — in monitoring and understanding local environmental changes. However, despite being openly available, remotely-sensed Earth observation Time Series (EO-TS) are complex and difficult for non-experts to interpret. We introduce the EO-evo (Earth Observation Evolution) ontology to to describe the Environmental semantic trajectories of EO data for both expert and non-expert users.</span>
+</div>
+<div id="toc"></div>  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">The EO-evo ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Break" title="http://purl.org/net/sett#Break">Break</a>
+   </li>
+   <li>
+      <a href="#Episode" title="http://purl.org/net/sett#Episode">Episode</a>
+   </li>
+   <li>
+      <a href="#Event" title="http://purl.org/net/sett#Event">Event</a>
+   </li>
+   <li>
+      <a href="#FittedBegin" title="http://purl.org/net/sett#FittedBegin">Fitted Begin</a>
+   </li>
+   <li>
+      <a href="#FittedEnd" title="http://purl.org/net/sett#FittedEnd">Fitted End</a>
+   </li>
+   <li>
+      <a href="#FittedMeasure" title="http://purl.org/net/sett#FittedMeasure">Fitted Measure</a>
+   </li>
+   <li>
+      <a href="#MultipleViewpointTrajectory"
+         title="http://purl.org/net/sett#MultipleViewpointTrajectory">Multiple Viewpoint Trajectory</a>
+   </li>
+   <li>
+      <a href="#Observation" title="http://purl.org/net/sett#Observation">Observation</a>
+   </li>
+   <li>
+      <a href="#PointOfView" title="http://purl.org/net/sett#PointOfView">Point Of View</a>
+   </li>
+   <li>
+      <a href="#RawTrajectory" title="http://purl.org/net/sett#RawTrajectory">Raw Trajectory</a>
+   </li>
+   <li>
+      <a href="#SemanticTrajectory" title="http://purl.org/net/sett#SemanticTrajectory">Semantic Trajectory</a>
+   </li>
+   <li>
+      <a href="#Slice" title="http://purl.org/net/sett#Slice">Slice</a>
+   </li>
+   <li>
+      <a href="#StructuredTrajectory" title="http://purl.org/net/sett#StructuredTrajectory">Structured Trajectory</a>
+   </li>
+   <li>
+      <a href="#Trend" title="http://purl.org/net/sett#Trend">Trend</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#correspondsTo" title="http://purl.org/net/sett#correspondsTo">corresponds To</a>
+   </li>
+   <li>
+      <a href="#EpisodeIsAnnotatedFrom" title="http://purl.org/net/sett#EpisodeIsAnnotatedFrom">Episode is Annotated from</a>
+   </li>
+   <li>
+      <a href="#EventIsAnnotatedFrom" title="http://purl.org/net/sett#EventIsAnnotatedFrom">Event is Annotated From</a>
+   </li>
+   <li>
+      <a href="#hasAnnotationEpisodeAbstract"
+         title="http://purl.org/net/sett#hasAnnotationEpisodeAbstract">has Annotation Abstract</a>
+   </li>
+   <li>
+      <a href="#hasAnnotationEpisodeDomain"
+         title="http://purl.org/net/sett#hasAnnotationEpisodeDomain">has Annotation Episode Domain</a>
+   </li>
+   <li>
+      <a href="#hasAnnotationEvent" title="http://purl.org/net/sett#hasAnnotationEvent">has Annotation Event</a>
+   </li>
+   <li>
+      <a href="#hasBreak" title="http://purl.org/net/sett#hasBreak">has Break</a>
+   </li>
+   <li>
+      <a href="#hasDate" title="http://purl.org/net/sett#hasDate">has Date</a>
+   </li>
+   <li>
+      <a href="#hasDateBreak" title="http://purl.org/net/sett#hasDateBreak">has Date</a>
+   </li>
+   <li>
+      <a href="#hasDomain" title="http://purl.org/net/sett#hasDomain">has Domain</a>
+   </li>
+   <li>
+      <a href="#hasEpisode" title="http://purl.org/net/sett#hasEpisode">has Episode</a>
+   </li>
+   <li>
+      <a href="#hasEvent" title="http://purl.org/net/sett#hasEvent">has Event</a>
+   </li>
+   <li>
+      <a href="#hasFittedBegin" title="http://purl.org/net/sett#hasFittedBegin">has Fitted Begin</a>
+   </li>
+   <li>
+      <a href="#hasFittedEnd" title="http://purl.org/net/sett#hasFittedEnd">has Fitted End</a>
+   </li>
+   <li>
+      <a href="#hasMVT" title="http://purl.org/net/sett#hasMVT">has Multiple Viewpoint Trajectory (MVT)</a>
+   </li>
+   <li>
+      <a href="#hasObservation" title="http://purl.org/net/sett#hasObservation">has Observation</a>
+   </li>
+   <li>
+      <a href="#hasPointOfView" title="http://purl.org/net/sett#hasPointOfView">has Point Of View</a>
+   </li>
+   <li>
+      <a href="#hasSemanticTrajectory" title="http://purl.org/net/sett#hasSemanticTrajectory">has Semantic Trajectory</a>
+   </li>
+   <li>
+      <a href="#hasTrend" title="http://purl.org/net/sett#hasTrend">has Trend</a>
+   </li>
+   <li>
+      <a href="#isCalculatedFrom" title="http://purl.org/net/sett#isCalculatedFrom">is Calculated From</a>
+   </li>
+   <li>
+      <a href="#isComposedOfObservation" title="http://purl.org/net/sett#isComposedOfObservation">is Composed Of Observation</a>
+   </li>
+   <li>
+      <a href="#monitorsIndice" title="http://purl.org/net/sett#monitorsIndice">monitorsI ndice</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#algorithmAppliedBreak" title="http://purl.org/net/sett#algorithmAppliedBreak">algorithm Applied for the Break detection</a>
+   </li>
+   <li>
+      <a href="#algorithmAppliedTrend" title="http://purl.org/net/sett#algorithmAppliedTrend">algorithm Applied for the Trend detection</a>
+   </li>
+   <li>
+      <a href="#hasEpisodeOrder" title="http://purl.org/net/sett#hasEpisodeOrder">has Episode Order</a>
+   </li>
+   <li>
+      <a href="#hasEventOrder" title="http://purl.org/net/sett#hasEventOrder">has Event Order</a>
+   </li>
+   <li>
+      <a href="#hasFittedValue" title="http://purl.org/net/sett#hasFittedValue">has Fitted Value</a>
+   </li>
+   <li>
+      <a href="#hasInterceptValue" title="http://purl.org/net/sett#hasInterceptValue">has Intercept Value</a>
+   </li>
+   <li>
+      <a href="#hasMagnitudeValue" title="http://purl.org/net/sett#hasMagnitudeValue">has Magnitude Value</a>
+   </li>
+   <li>
+      <a href="#hasPValue" title="http://purl.org/net/sett#hasPValue">has p-value</a>
+   </li>
+   <li>
+      <a href="#hasSlopeValue" title="http://purl.org/net/sett#hasSlopeValue">has Slope Value</a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">The EO-evo ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">EO-evo is a multi-layer ontology designed to describe the semantic trajectories of Earth Observation (EO) data within the Environmental domain. The ontology embeds three types of trajectories: raw, structured, and semantic. These trajectories provide a comprehensive framework for capturing, organizing, and analyzing the spatio-temporal evolution of Earth’s dynamics.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for The EO-evo ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by The EO-evo ontology.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#Break" title="http://purl.org/net/sett#Break">Break</a></li>
+  <li><a href="#Episode" title="http://purl.org/net/sett#Episode">Episode</a></li>
+  <li><a href="#Event" title="http://purl.org/net/sett#Event">Event</a></li>
+  <li><a href="#FittedBegin" title="http://purl.org/net/sett#FittedBegin">Fitted Begin</a></li>
+  <li><a href="#FittedEnd" title="http://purl.org/net/sett#FittedEnd">Fitted End</a></li>
+  <li><a href="#FittedMeasure" title="http://purl.org/net/sett#FittedMeasure">Fitted Measure</a></li>
+  <li><a href="#MultipleViewpointTrajectory" title="http://purl.org/net/sett#MultipleViewpointTrajectory">Multiple Viewpoint Trajectory</a></li>
+  <li><a href="#Observation" title="http://purl.org/net/sett#Observation">Observation</a></li>
+  <li><a href="#PointOfView" title="http://purl.org/net/sett#PointOfView">Point Of View</a></li>
+  <li><a href="#RawTrajectory" title="http://purl.org/net/sett#RawTrajectory">Raw Trajectory</a></li>
+  <li><a href="#SemanticTrajectory" title="http://purl.org/net/sett#SemanticTrajectory">Semantic Trajectory</a></li>
+  <li><a href="#Slice" title="http://purl.org/net/sett#Slice">Slice</a></li>
+  <li><a href="#StructuredTrajectory" title="http://purl.org/net/sett#StructuredTrajectory">Structured Trajectory</a></li>
+  <li><a href="#Trend" title="http://purl.org/net/sett#Trend">Trend</a></li>
+ </ul>
+ <div class="entity" id="Break">
+  <h3>Break<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#Break</p>
+  <div class="comment">
+   <span class="markdown">A break (or breakpoint) belongs to a structured trajectory and denotes a significative change in the time series. It is calculated using Segmentation algorithms.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#correspondsTo" title="http://purl.org/net/sett#correspondsTo">corresponds To</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasDateBreak" title="http://purl.org/net/sett#hasDateBreak">has Date</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasMagnitudeValue" title="http://purl.org/net/sett#hasMagnitudeValue">has Magnitude Value</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#EventIsAnnotatedFrom" title="http://purl.org/net/sett#EventIsAnnotatedFrom">Event is Annotated From</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasBreak" title="http://purl.org/net/sett#hasBreak">has Break</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Episode">
+  <h3>Episode<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#Episode</p>
+  <div class="comment">
+   <span class="markdown">An episode belongs to a semantic trajectory and is the result of annotating a trend component.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#EpisodeIsAnnotatedFrom" title="http://purl.org/net/sett#EpisodeIsAnnotatedFrom">Episode is Annotated from</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasAnnotationEpisodeAbstract" title="http://purl.org/net/sett#hasAnnotationEpisodeAbstract">has Annotation Abstract</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasAnnotationEpisodeDomain" title="http://purl.org/net/sett#hasAnnotationEpisodeDomain">has Annotation Episode Domain</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasEpisodeOrder" title="http://purl.org/net/sett#hasEpisodeOrder">has Episode Order</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasEpisode" title="http://purl.org/net/sett#hasEpisode">has Episode</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Event">
+  <h3>Event<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#Event</p>
+  <div class="comment">
+   <span class="markdown">An event belongs to a semantic trajectory and is the result of annotating a break component.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#EventIsAnnotatedFrom" title="http://purl.org/net/sett#EventIsAnnotatedFrom">Event is Annotated From</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasAnnotationEvent" title="http://purl.org/net/sett#hasAnnotationEvent">has Annotation Event</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasEventOrder" title="http://purl.org/net/sett#hasEventOrder">has Event Order</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasEvent" title="http://purl.org/net/sett#hasEvent">has Event</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FittedBegin">
+  <h3>Fitted Begin<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#FittedBegin</p>
+  <div class="comment">
+   <span class="markdown">Fitted begin corresponds to the first fitted value, marking the start of the Trend.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#FittedMeasure" title="http://purl.org/net/sett#FittedMeasure">Fitted Measure</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasFittedBegin" title="http://purl.org/net/sett#hasFittedBegin">has Fitted Begin</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FittedEnd">
+  <h3>Fitted End<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#FittedEnd</p>
+  <div class="comment">
+   <span class="markdown">Fitted end represents the final predicted value in the trend, potentially coinciding with a breakpoint if it does not mark the end of the entire Trend sequence.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#FittedMeasure" title="http://purl.org/net/sett#FittedMeasure">Fitted Measure</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasFittedEnd" title="http://purl.org/net/sett#hasFittedEnd">has Fitted End</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FittedMeasure">
+  <h3>Fitted Measure<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#FittedMeasure</p>
+  <div class="comment">
+   <span class="markdown">Fitted measures in linear regression are the predicted values calculated by the regression model.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Fitted measures in linear regression are the predicted values calculated by the regression model.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#FittedBegin" title="http://purl.org/net/sett#FittedBegin">Fitted Begin</a> <sup class="type-c" title="class">c</sup>, <a href="#FittedEnd" title="http://purl.org/net/sett#FittedEnd">Fitted End</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasDate" title="http://purl.org/net/sett#hasDate">has Date</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasFittedValue" title="http://purl.org/net/sett#hasFittedValue">has Fitted Value</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MultipleViewpointTrajectory">
+  <h3>Multiple Viewpoint Trajectory<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#MultipleViewpointTrajectory</p>
+  <div class="comment">
+   <span class="markdown">When a trajectory is associated with many viewpoints, these trajectories are known as Multiple Viewpoint Trajectories (MVT).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasSemanticTrajectory" title="http://purl.org/net/sett#hasSemanticTrajectory">has Semantic Trajectory</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasMVT" title="http://purl.org/net/sett#hasMVT">has Multiple Viewpoint Trajectory (MVT)</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Observation">
+  <h3>Observation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#Observation</p>
+  <div class="comment">
+   <span class="markdown">An observation belongs to a raw trajectory and represents a measurement in the original time series.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/linked-data/cube#Observation" target="_blank" title="http://purl.org/linked-data/cube#Observation">Observation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#correspondsTo" title="http://purl.org/net/sett#correspondsTo">corresponds To</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasObservation" title="http://purl.org/net/sett#hasObservation">has Observation</a> <sup class="type-op" title="object property">op</sup>, <a href="#isComposedOfObservation" title="http://purl.org/net/sett#isComposedOfObservation">is Composed Of Observation</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PointOfView">
+  <h3>Point Of View<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#PointOfView</p>
+  <div class="comment">
+   <span class="markdown">A semantic trajectory monitors one point of wiew, such as environmental domains.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasDomain" title="http://purl.org/net/sett#hasDomain">has Domain</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasPointOfView" title="http://purl.org/net/sett#hasPointOfView">has Point Of View</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="RawTrajectory">
+  <h3>Raw Trajectory<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#RawTrajectory</p>
+  <div class="comment">
+   <span class="markdown">Raw trajectories are sequences of observations performed by agents, such as territorial units.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasObservation" title="http://purl.org/net/sett#hasObservation">has Observation</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SemanticTrajectory">
+  <h3>Semantic Trajectory<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#SemanticTrajectory</p>
+  <div class="comment">
+   <span class="markdown">Semantic trajectories are the result of annotating structured trajectories as sequences of Episodes and Events.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasEpisode" title="http://purl.org/net/sett#hasEpisode">has Episode</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasEvent" title="http://purl.org/net/sett#hasEvent">has Event</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPointOfView" title="http://purl.org/net/sett#hasPointOfView">has Point Of View</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasSemanticTrajectory" title="http://purl.org/net/sett#hasSemanticTrajectory">has Semantic Trajectory</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Slice">
+  <h3>Slice<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#Slice</p>
+  <div class="comment">
+   <span class="markdown">A slice belongs to a raw trajectory and refers to a group of observations from the original time series used to calculate a given trend.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/linked-data/cube#Slice" target="_blank" title="http://purl.org/linked-data/cube#Slice">Slice</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isComposedOfObservation" title="http://purl.org/net/sett#isComposedOfObservation">is Composed Of Observation</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isCalculatedFrom" title="http://purl.org/net/sett#isCalculatedFrom">is Calculated From</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="StructuredTrajectory">
+  <h3>Structured Trajectory<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#StructuredTrajectory</p>
+  <div class="comment">
+   <span class="markdown">Structured trajectories are the result of segment Raw trajectories into sequences of Trends and Breaks.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#algorithmAppliedBreak" title="http://purl.org/net/sett#algorithmAppliedBreak">algorithm Applied for the Break detection</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#algorithmAppliedTrend" title="http://purl.org/net/sett#algorithmAppliedTrend">algorithm Applied for the Trend detection</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasBreak" title="http://purl.org/net/sett#hasBreak">has Break</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTrend" title="http://purl.org/net/sett#hasTrend">has Trend</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Trend">
+  <h3>Trend<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#Trend</p>
+  <div class="comment">
+   <span class="markdown">A trend belongs to a structured trajectory and is calculated using Segmentation algorithms.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasFittedBegin" title="http://purl.org/net/sett#hasFittedBegin">has Fitted Begin</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasFittedEnd" title="http://purl.org/net/sett#hasFittedEnd">has Fitted End</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasInterceptValue" title="http://purl.org/net/sett#hasInterceptValue">has Intercept Value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasSlopeValue" title="http://purl.org/net/sett#hasSlopeValue">has Slope Value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasPValue" title="http://purl.org/net/sett#hasPValue">has p-value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isCalculatedFrom" title="http://purl.org/net/sett#isCalculatedFrom">is Calculated From</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#EpisodeIsAnnotatedFrom" title="http://purl.org/net/sett#EpisodeIsAnnotatedFrom">Episode is Annotated from</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTrend" title="http://purl.org/net/sett#hasTrend">has Trend</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#correspondsTo" title="http://purl.org/net/sett#correspondsTo">corresponds To</a></li>
+  <li><a href="#EpisodeIsAnnotatedFrom" title="http://purl.org/net/sett#EpisodeIsAnnotatedFrom">Episode is Annotated from</a></li>
+  <li><a href="#EventIsAnnotatedFrom" title="http://purl.org/net/sett#EventIsAnnotatedFrom">Event is Annotated From</a></li>
+  <li><a href="#hasAnnotationEpisodeAbstract" title="http://purl.org/net/sett#hasAnnotationEpisodeAbstract">has Annotation Abstract</a></li>
+  <li><a href="#hasAnnotationEpisodeDomain" title="http://purl.org/net/sett#hasAnnotationEpisodeDomain">has Annotation Episode Domain</a></li>
+  <li><a href="#hasAnnotationEvent" title="http://purl.org/net/sett#hasAnnotationEvent">has Annotation Event</a></li>
+  <li><a href="#hasBreak" title="http://purl.org/net/sett#hasBreak">has Break</a></li>
+  <li><a href="#hasDate" title="http://purl.org/net/sett#hasDate">has Date</a></li>
+  <li><a href="#hasDateBreak" title="http://purl.org/net/sett#hasDateBreak">has Date</a></li>
+  <li><a href="#hasDomain" title="http://purl.org/net/sett#hasDomain">has Domain</a></li>
+  <li><a href="#hasEpisode" title="http://purl.org/net/sett#hasEpisode">has Episode</a></li>
+  <li><a href="#hasEvent" title="http://purl.org/net/sett#hasEvent">has Event</a></li>
+  <li><a href="#hasFittedBegin" title="http://purl.org/net/sett#hasFittedBegin">has Fitted Begin</a></li>
+  <li><a href="#hasFittedEnd" title="http://purl.org/net/sett#hasFittedEnd">has Fitted End</a></li>
+  <li><a href="#hasMVT" title="http://purl.org/net/sett#hasMVT">has Multiple Viewpoint Trajectory (MVT)</a></li>
+  <li><a href="#hasObservation" title="http://purl.org/net/sett#hasObservation">has Observation</a></li>
+  <li><a href="#hasPointOfView" title="http://purl.org/net/sett#hasPointOfView">has Point Of View</a></li>
+  <li><a href="#hasSemanticTrajectory" title="http://purl.org/net/sett#hasSemanticTrajectory">has Semantic Trajectory</a></li>
+  <li><a href="#hasTrend" title="http://purl.org/net/sett#hasTrend">has Trend</a></li>
+  <li><a href="#isCalculatedFrom" title="http://purl.org/net/sett#isCalculatedFrom">is Calculated From</a></li>
+  <li><a href="#isComposedOfObservation" title="http://purl.org/net/sett#isComposedOfObservation">is Composed Of Observation</a></li>
+  <li><a href="#monitorsIndice" title="http://purl.org/net/sett#monitorsIndice">monitorsI ndice</a></li>
+ </ul>
+ <div class="entity" id="correspondsTo">
+  <h3>corresponds To<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#correspondsTo</p>
+  <div class="comment">
+   <span class="markdown"> </span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Break" title="http://purl.org/net/sett#Break">Break</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Observation" title="http://purl.org/net/sett#Observation">Observation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="EpisodeIsAnnotatedFrom">
+  <h3>Episode is Annotated from<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#EpisodeIsAnnotatedFrom</p>
+  <div class="comment">
+   <span class="markdown">An Episode is annotated from a Trend.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Episode" title="http://purl.org/net/sett#Episode">Episode</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Trend" title="http://purl.org/net/sett#Trend">Trend</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="EventIsAnnotatedFrom">
+  <h3>Event is Annotated From<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#EventIsAnnotatedFrom</p>
+  <div class="comment">
+   <span class="markdown">An Event is Annotated From a Break.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Event" title="http://purl.org/net/sett#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Break" title="http://purl.org/net/sett#Break">Break</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasAnnotationEpisodeAbstract">
+  <h3>has Annotation Abstract<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasAnnotationEpisodeAbstract</p>
+  <div class="comment">
+   <span class="markdown">The Episode is annotated with semantic descriptions. This annotations corresponds to the Abstract layer.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Episode" title="http://purl.org/net/sett#Episode">Episode</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasAnnotationEpisodeDomain">
+  <h3>has Annotation Episode Domain<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasAnnotationEpisodeDomain</p>
+  <div class="comment">
+   <span class="markdown">The Episode is annotated with semantic descriptions. This annotations corresponds to the Environmental domain layer.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Episode" title="http://purl.org/net/sett#Episode">Episode</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasAnnotationEvent">
+  <h3>has Annotation Event<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasAnnotationEvent</p>
+  <div class="comment">
+   <span class="markdown">The Event is annotated with semantic descriptions.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Event" title="http://purl.org/net/sett#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasBreak">
+  <h3>has Break<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasBreak</p>
+  <div class="comment">
+   <span class="markdown">A Structured trajectory has zero or more Breaks.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#StructuredTrajectory" title="http://purl.org/net/sett#StructuredTrajectory">Structured Trajectory</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Break" title="http://purl.org/net/sett#Break">Break</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasDate">
+  <h3>has Date<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasDate</p>
+  <div class="comment">
+   <span class="markdown">Denotes the date of a fitted measurement.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#FittedMeasure" title="http://purl.org/net/sett#FittedMeasure">Fitted Measure</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://purl.org/net/sett#DateTimeDescription" target="_blank" title="http://purl.org/net/sett#DateTimeDescription">Date Time Description</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasDateBreak">
+  <h3>has Date<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasDateBreak</p>
+  <div class="comment">
+   <span class="markdown">Denotes the approximate date of the breakpoint.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Break" title="http://purl.org/net/sett#Break">Break</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://purl.org/net/sett#DateTimeDescription" target="_blank" title="http://purl.org/net/sett#DateTimeDescription">Date Time Description</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasDomain">
+  <h3>has Domain<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasDomain</p>
+  <div class="comment">
+   <span class="markdown">Denotes the Environmental domain.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#PointOfView" title="http://purl.org/net/sett#PointOfView">Point Of View</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasEpisode">
+  <h3>has Episode<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasEpisode</p>
+  <div class="comment">
+   <span class="markdown">A Semantic trajectory has one or more Episodes.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#SemanticTrajectory" title="http://purl.org/net/sett#SemanticTrajectory">Semantic Trajectory</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Episode" title="http://purl.org/net/sett#Episode">Episode</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasEvent">
+  <h3>has Event<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasEvent</p>
+  <div class="comment">
+   <span class="markdown">A Semantic trajectory has zero or more Events.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#SemanticTrajectory" title="http://purl.org/net/sett#SemanticTrajectory">Semantic Trajectory</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Event" title="http://purl.org/net/sett#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasFittedBegin">
+  <h3>has Fitted Begin<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasFittedBegin</p>
+  <div class="comment">
+   <span class="markdown">The trend line starts with its first fitted value.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Trend" title="http://purl.org/net/sett#Trend">Trend</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#FittedBegin" title="http://purl.org/net/sett#FittedBegin">Fitted Begin</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasFittedEnd">
+  <h3>has Fitted End<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasFittedEnd</p>
+  <div class="comment">
+   <span class="markdown">The trend line finishes with its last fitted value.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Trend" title="http://purl.org/net/sett#Trend">Trend</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#FittedEnd" title="http://purl.org/net/sett#FittedEnd">Fitted End</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasMVT">
+  <h3>has Multiple Viewpoint Trajectory (MVT)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasMVT</p>
+  <div class="comment">
+   <span class="markdown">A Territorial Unit (TU) has Multiple Viewpoint Trajectory (MVT).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://purl.org/net/sett#TerritorialUnit" target="_blank" title="http://purl.org/net/sett#TerritorialUnit">Territorial Unit</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#MultipleViewpointTrajectory" title="http://purl.org/net/sett#MultipleViewpointTrajectory">Multiple Viewpoint Trajectory</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasObservation">
+  <h3>has Observation<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasObservation</p>
+  <div class="comment">
+   <span class="markdown">A raw trajectory consists of one or more observations that represent its movement.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#RawTrajectory" title="http://purl.org/net/sett#RawTrajectory">Raw Trajectory</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Observation" title="http://purl.org/net/sett#Observation">Observation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasPointOfView">
+  <h3>has Point Of View<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasPointOfView</p>
+  <div class="comment">
+   <span class="markdown">A Semantic trajectory has a Point Of View.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#SemanticTrajectory" title="http://purl.org/net/sett#SemanticTrajectory">Semantic Trajectory</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#PointOfView" title="http://purl.org/net/sett#PointOfView">Point Of View</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasSemanticTrajectory">
+  <h3>has Semantic Trajectory<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasSemanticTrajectory</p>
+  <div class="comment">
+   <span class="markdown">A Multiple Viewpoint Trajectory (MVP) is composed of one Semantic trajectory.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#MultipleViewpointTrajectory" title="http://purl.org/net/sett#MultipleViewpointTrajectory">Multiple Viewpoint Trajectory</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#SemanticTrajectory" title="http://purl.org/net/sett#SemanticTrajectory">Semantic Trajectory</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasTrend">
+  <h3>has Trend<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasTrend</p>
+  <div class="comment">
+   <span class="markdown">A Structured trajectory has one or more Trends.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#StructuredTrajectory" title="http://purl.org/net/sett#StructuredTrajectory">Structured Trajectory</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Trend" title="http://purl.org/net/sett#Trend">Trend</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isCalculatedFrom">
+  <h3>is Calculated From<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#isCalculatedFrom</p>
+  <div class="comment">
+   <span class="markdown">A Trend is calculated from a Slice.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Trend" title="http://purl.org/net/sett#Trend">Trend</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Slice" title="http://purl.org/net/sett#Slice">Slice</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isComposedOfObservation">
+  <h3>is Composed Of Observation<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#isComposedOfObservation</p>
+  <div class="comment">
+   <span class="markdown">Slices are composed of Observations.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Slice" title="http://purl.org/net/sett#Slice">Slice</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Observation" title="http://purl.org/net/sett#Observation">Observation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="monitorsIndice">
+  <h3>monitorsI ndice<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#monitorsIndice</p>
+  <div class="comment">
+   <span class="markdown">An Environmental domain monitors an Indice.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#algorithmAppliedBreak" title="http://purl.org/net/sett#algorithmAppliedBreak">algorithm Applied for the Break detection</a></li>
+  <li><a href="#algorithmAppliedTrend" title="http://purl.org/net/sett#algorithmAppliedTrend">algorithm Applied for the Trend detection</a></li>
+  <li><a href="#hasEpisodeOrder" title="http://purl.org/net/sett#hasEpisodeOrder">has Episode Order</a></li>
+  <li><a href="#hasEventOrder" title="http://purl.org/net/sett#hasEventOrder">has Event Order</a></li>
+  <li><a href="#hasFittedValue" title="http://purl.org/net/sett#hasFittedValue">has Fitted Value</a></li>
+  <li><a href="#hasInterceptValue" title="http://purl.org/net/sett#hasInterceptValue">has Intercept Value</a></li>
+  <li><a href="#hasMagnitudeValue" title="http://purl.org/net/sett#hasMagnitudeValue">has Magnitude Value</a></li>
+  <li><a href="#hasPValue" title="http://purl.org/net/sett#hasPValue">has p-value</a></li>
+  <li><a href="#hasSlopeValue" title="http://purl.org/net/sett#hasSlopeValue">has Slope Value</a></li>
+ </ul>
+ <div class="entity" id="algorithmAppliedBreak">
+  <h3>algorithm Applied for the Break detection<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#algorithmAppliedBreak</p>
+  <div class="comment">
+   <span class="markdown">Refers to the applied algorithm used for the Break detection.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#StructuredTrajectory" title="http://purl.org/net/sett#StructuredTrajectory">Structured Trajectory</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="algorithmAppliedTrend">
+  <h3>algorithm Applied for the Trend detection<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#algorithmAppliedTrend</p>
+  <div class="comment">
+   <span class="markdown">Refers to the applied algorithm used for the Trend detection.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#StructuredTrajectory" title="http://purl.org/net/sett#StructuredTrajectory">Structured Trajectory</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasEpisodeOrder">
+  <h3>has Episode Order<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasEpisodeOrder</p>
+  <div class="comment">
+   <span class="markdown">Denotes the Episode Order.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Episode" title="http://purl.org/net/sett#Episode">Episode</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasEventOrder">
+  <h3>has Event Order<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasEventOrder</p>
+  <div class="comment">
+   <span class="markdown">Denotes the Episode Order.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Event" title="http://purl.org/net/sett#Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasFittedValue">
+  <h3>has Fitted Value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasFittedValue</p>
+  <div class="comment">
+   <span class="markdown">The fitted measure has a value.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#FittedMeasure" title="http://purl.org/net/sett#FittedMeasure">Fitted Measure</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasInterceptValue">
+  <h3>has Intercept Value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasInterceptValue</p>
+  <div class="comment">
+   <span class="markdown">Refers to the intercept value of the Trend line.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Trend" title="http://purl.org/net/sett#Trend">Trend</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasMagnitudeValue">
+  <h3>has Magnitude Value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasMagnitudeValue</p>
+  <div class="comment">
+   <span class="markdown">The breakpoint is associated with a magnitude value, which is the distance between the breakpoint and the consecutive point.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Break" title="http://purl.org/net/sett#Break">Break</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasPValue">
+  <h3>has p-value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasPValue</p>
+  <div class="comment">
+   <span class="markdown">Refers to the p-value obtained from the regression analysis.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Trend" title="http://purl.org/net/sett#Trend">Trend</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasSlopeValue">
+  <h3>has Slope Value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/net/sett#hasSlopeValue</p>
+  <div class="comment">
+   <span class="markdown">Refers to the slope value of the Trend line.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Trend" title="http://purl.org/net/sett#Trend">Trend</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
